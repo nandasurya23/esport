@@ -13,10 +13,10 @@ export default function HeroSection() {
           playsInline
           className="w-full h-full object-cover opacity-50"
         >
-          <source src="video/esport.mp4" type="video/mp4" />
+          <source src="esport.mp4" type="video/mp4" />
           {/* Fallback image if video doesn't load */}
           <img 
-            src="/esports-hero-fallback.jpg" 
+            src="valorant-event.jpg" 
             alt="Esports tournament crowd" 
             className="w-full h-full object-cover"
           />

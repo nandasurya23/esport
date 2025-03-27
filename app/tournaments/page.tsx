@@ -12,7 +12,7 @@ export default function TournamentsPage() {
       teams: 32,
       format: '5v5',
       status: 'upcoming' as const, // <-- Add 'as const' to ensure type literal
-      image: '/valorant-tournament.jpg'
+      image: '/valorant-event.jpg'
     },
     // ...
   ]
@@ -27,7 +27,7 @@ export default function TournamentsPage() {
       teams: 24,
       format: '5v5',
       status: 'ongoing' as const, // <-- Add 'as const' here
-      image: '/dota-tournament.jpg'
+      image: '/valorant-event.jpg'
     }
   ]
   
@@ -42,7 +42,7 @@ export default function TournamentsPage() {
       format: '5v5',
       status: 'completed' as const, // <-- And here
       winner: 'Team Phoenix',
-      image: '/csgo-tournament.jpg'
+      image: '/valorant-event.jpg'
     }
   ]
   return (

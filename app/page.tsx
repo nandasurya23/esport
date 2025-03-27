@@ -22,7 +22,7 @@ export default function Home() {
       id: 1,
       name: 'Team Phoenix',
       game: 'Dota 2',
-      logo: '/phoenix-logo.png',
+      logo: 'teams/phoenix.png',
       members: 5
     },
     // More teams...

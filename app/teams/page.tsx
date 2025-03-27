@@ -8,7 +8,7 @@ export default function TeamsPage() {
       id: 1,
       name: 'Team Phoenix',
       game: 'Dota 2',
-      logo: '/phoenix-logo.png',
+      logo: 'teams/phoenix.png',
       members: 5,
       established: 2018,
       country: 'International'
@@ -17,7 +17,7 @@ export default function TeamsPage() {
       id: 2,
       name: 'Shadow Wolves',
       game: 'Valorant',
-      logo: '/wolves-logo.png',
+      logo: 'teams/phoenix.png',
       members: 6,
       established: 2020,
       country: 'USA'
@@ -26,7 +26,7 @@ export default function TeamsPage() {
       id: 3,
       name: 'Dragon Knights',
       game: 'League of Legends',
-      logo: '/knights-logo.png',
+      logo: 'teams/phoenix.png',
       members: 7,
       established: 2019,
       country: 'South Korea'
@@ -35,7 +35,7 @@ export default function TeamsPage() {
       id: 4,
       name: 'Void Strikers',
       game: 'Counter-Strike',
-      logo: '/strikers-logo.png',
+      logo: 'teams/phoenix.png',
       members: 5,
       established: 2017,
       country: 'Europe'
@@ -47,7 +47,7 @@ export default function TeamsPage() {
       id: 5,
       name: 'Titan Esports',
       game: 'Dota 2',
-      logo: '/titan-logo.png',
+      logo: 'teams/phoenix.png',
       members: 5,
       ranking: 1
     },
@@ -55,7 +55,7 @@ export default function TeamsPage() {
       id: 6,
       name: 'Nova Gaming',
       game: 'Valorant',
-      logo: '/nova-logo.png',
+      logo: 'teams/phoenix.png',
       members: 6,
       ranking: 2
     },
@@ -63,7 +63,7 @@ export default function TeamsPage() {
       id: 7,
       name: 'Eclipse',
       game: 'League of Legends',
-      logo: '/eclipse-logo.png',
+      logo: 'teams/phoenix.png',
       members: 7,
       ranking: 3
     },
