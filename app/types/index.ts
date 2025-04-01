@@ -25,14 +25,38 @@ export interface Event {
   }
 
   export interface Tournament {
-    id: number
-    name: string
-    game: string
-    date: string
-    prize: string
-    teams: number
-    format: string
-    status: 'upcoming' | 'ongoing' | 'completed'
-    winner?: string
-    image?: string
+    id: number;
+    name: string;
+    game: string;
+    description: string;
+    date: string;
+    prize: string;
+    teams: number;
+    maxTeams?: number;
+    format: string;
+    status: 'upcoming' | 'ongoing' | 'completed';
+    winner?: string;
+    image?: string;
+    registrationDeadline?: string;
+    rules?: string;
+    platform: 'pc' | 'mobile' | 'console' | 'cross-platform';
+    entryFee?: number;
+    isRegistered?: boolean;
+    organizer?: {
+      id: number;
+      name: string;
+      logo?: string;
+    };
+    streamLink?: string;
+    bracketsLink?: string;
+    location?: string;
+    schedule?: {
+      date: string;
+      stage: string;
+      matches: string[];
+    }[];
+    prizeDistribution?: {
+      position: number;
+      prize: string;
+    }[];
   }
