@@ -41,8 +41,25 @@ export default function TournamentCard({ tournament }: TournamentCardProps) {
     router.push(`/tournaments/${tournament.id}`)
   }
 
-  const isRegistrationClosed = tournament.registrationDeadline &&
-    new Date(tournament.registrationDeadline) < new Date()
+  // Improved date handling with fallback
+  const formatDate = (dateString: string | undefined) => {
+    if (!dateString) return 'N/A';
+    try {
+      const date = new Date(dateString);
+      return isNaN(date.getTime()) ? 'N/A' : date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      });
+    } catch {
+      return 'N/A';
+    }
+  }
+
+  // Safer registration deadline check
+  const isRegistrationClosed = tournament.registrationDeadline ? 
+    new Date(tournament.registrationDeadline) < new Date() : 
+    false;
 
   return (
     <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
@@ -80,11 +97,7 @@ export default function TournamentCard({ tournament }: TournamentCardProps) {
           <div>
             <p className="text-sm text-gray-400">Date</p>
             <p className="font-medium">
-              {new Date(tournament.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric'
-              })}
+              {formatDate(tournament.date)}
             </p>
           </div>
           <div>
@@ -142,6 +155,7 @@ export default function TournamentCard({ tournament }: TournamentCardProps) {
                     : 'bg-green-600 hover:bg-green-500 text-white'
               }`}
               onClick={handleRegister}
+              disabled={Boolean(tournament.isRegistered) || isRegistrationClosed}
             >
               {tournament.isRegistered
                 ? 'Already Registered'
@@ -155,8 +169,8 @@ export default function TournamentCard({ tournament }: TournamentCardProps) {
         {tournament.status === 'upcoming' && tournament.registrationDeadline && (
           <p className="text-xs text-gray-400 mt-2 text-center">
             {isRegistrationClosed
-              ? 'Registration closed on ' + new Date(tournament.registrationDeadline).toLocaleDateString()
-              : 'Closes on ' + new Date(tournament.registrationDeadline).toLocaleDateString()}
+              ? `Registration closed on ${formatDate(tournament.registrationDeadline)}`
+              : `Registration closes on ${formatDate(tournament.registrationDeadline)}`}
           </p>
         )}
       </div>

@@ -1,50 +1,97 @@
 import TournamentCard from '../components/TournamentCard'
+import { Tournament } from '../types' // Import your Tournament type
 
 export default function TournamentsPage() {
-  // Sample data - in a real app, this would come from an API
-  const upcomingTournaments = [
+  // Sample data that matches the Tournament interface
+  const upcomingTournaments: Tournament[] = [
     {
       id: 1,
       name: 'Valorant Champions Tour',
       game: 'Valorant',
+      description: 'Premier Valorant tournament series',
       date: '2023-12-15',
       prize: '$50,000',
       teams: 32,
+      maxTeams: 64,
       format: '5v5',
-      status: 'upcoming' as const, // <-- Add 'as const' to ensure type literal
-      image: '/valorant-event.jpg'
+      status: 'upcoming',
+      platform: 'pc',
+      image: '/valorant-event.jpg',
+      registrationDeadline: '2023-15-01',
+      entryFee: 100,
+      location: 'Online',
+      rules: 'https://example.com/rules.pdf',
+      organizer: {
+        id: 1,
+        name: 'Riot Games',
+        logo: '/riot-logo.png'
+      }
     },
-    // ...
+    {
+      id: 2,
+      name: 'Dota Tour',
+      game: 'Dota 2',
+      description: 'Premier Dota tournament series',
+      date: '2023-12-15',
+      prize: '$50,000',
+      teams: 32,
+      maxTeams: 64,
+      format: '5v5',
+      status: 'upcoming',
+      platform: 'pc',
+      image: '/valorant-event.jpg',
+      registrationDeadline: '2023-12-01',
+      entryFee: 100,
+      location: 'Online',
+      rules: 'https://example.com/rules.pdf',
+      organizer: {
+        id: 1,
+        name: 'Riot Games',
+        logo: '/riot-logo.png'
+      }
+    }
   ]
   
-  const ongoingTournaments = [
+  const ongoingTournaments: Tournament[] = [
     {
       id: 3,
       name: 'Dota 2 International Qualifiers',
       game: 'Dota 2',
+      description: 'Qualifiers for the prestigious Dota 2 International tournament',
       date: '2023-11-05',
       prize: '$25,000',
       teams: 24,
       format: '5v5',
-      status: 'ongoing' as const, // <-- Add 'as const' here
-      image: '/valorant-event.jpg'
+      status: 'ongoing',
+      platform: 'pc',
+      image: '/valorant-event.jpg',
+      streamLink: 'https://twitch.tv/dota2',
+      bracketsLink: 'https://challonge.com/dota2qualifiers'
     }
   ]
   
-  const pastTournaments = [
+  const pastTournaments: Tournament[] = [
     {
       id: 4,
       name: 'CS:GO Major Championship',
       game: 'Counter-Strike',
+      description: 'The most prestigious CS:GO tournament of the year',
       date: '2023-10-15',
       prize: '$75,000',
       teams: 16,
       format: '5v5',
-      status: 'completed' as const, // <-- And here
+      status: 'completed',
       winner: 'Team Phoenix',
-      image: '/valorant-event.jpg'
+      platform: 'pc',
+      image: '/valorant-event.jpg',
+      prizeDistribution: [
+        { position: 1, prize: '$50,000' },
+        { position: 2, prize: '$20,000' },
+        { position: 3, prize: '$5,000' }
+      ]
     }
   ]
+
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="text-center mb-16">
