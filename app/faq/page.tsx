@@ -2,11 +2,8 @@
 import { useState } from 'react';
 
 export default function FAQPage() {
+    const [searchTerm, setSearchTerm] = useState('');
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-    const toggleAccordion = (index: number) => {
-        setActiveIndex(activeIndex === index ? null : index);
-    };
 
     const faqs = [
         {
@@ -43,55 +40,91 @@ export default function FAQPage() {
         }
     ];
 
+    const filteredFaqs = faqs.filter(faq =>
+        faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    const toggleAccordion = (index: number) => {
+        setActiveIndex(activeIndex === index ? null : index);
+    };
+
     return (
         <div className="max-w-4xl mx-auto px-4 py-12">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8">
                 <h1 className="text-4xl font-bold mb-4">FAQ</h1>
                 <p className="text-xl text-gray-400">
                     Pertanyaan yang sering diajukan tentang turnamen esports kami
                 </p>
             </div>
 
-            <div className="space-y-4">
-                {faqs.map((faq, index) => (
-                    <div key={index} className="border border-gray-700 rounded-lg overflow-hidden">
-                        <button
-                            className={`w-full flex justify-between items-center p-6 text-left bg-gray-800 hover:bg-gray-700 transition ${activeIndex === index ? 'bg-gray-700' : ''
-                                }`}
-                            onClick={() => toggleAccordion(index)}
-                        >
-                            <h2 className="text-lg font-medium text-white">{faq.question}</h2>
-                            <svg
-                                className={`w-6 h-6 text-purple-400 transform transition ${activeIndex === index ? 'rotate-180' : ''
-                                    }`}
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M19 9l-7 7-7-7"
-                                />
-                            </svg>
-                        </button>
-                        <div
-                            className={`bg-gray-800 px-6 overflow-hidden transition-all duration-300 ${activeIndex === index ? 'max-h-96 py-6' : 'max-h-0 py-0'
-                                }`}
-                        >
-                            <p className="text-gray-300">{faq.answer}</p>
-                        </div>
-                    </div>
-                ))}
+            {/* Search Bar */}
+            <div className="mb-8">
+                <input
+                    type="text"
+                    placeholder="Cari pertanyaan..."
+                    className="w-full p-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
+                    value={searchTerm}
+                    onChange={(e) => {
+                        setSearchTerm(e.target.value);
+                        setActiveIndex(null); // Close all accordions when searching
+                    }}
+                />
             </div>
 
-            <div className="mt-16 bg-gray-800 rounded-lg p-8 text-center">
+            {/* FAQ List */}
+            <div className="space-y-4 mb-12">
+                {filteredFaqs.length > 0 ? (
+                    filteredFaqs.map((faq, index) => (
+                        <div key={index} className="border border-gray-700 rounded-lg overflow-hidden">
+                            <button
+                                className={`w-full flex justify-between items-center p-6 text-left bg-gray-800 hover:bg-gray-700 transition ${activeIndex === index ? 'bg-gray-700' : ''
+                                    }`}
+                                onClick={() => toggleAccordion(index)}
+                            >
+                                <h2 className="text-lg font-medium text-white">{faq.question}</h2>
+                                <svg
+                                    className={`w-6 h-6 text-purple-400 transform transition ${activeIndex === index ? 'rotate-180' : ''
+                                        }`}
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M19 9l-7 7-7-7"
+                                    />
+                                </svg>
+                            </button>
+                            <div
+                                className={`bg-gray-800 px-6 overflow-hidden transition-all duration-300 ${activeIndex === index ? 'max-h-96 py-6' : 'max-h-0 py-0'
+                                    }`}
+                            >
+                                <p className="text-gray-300">{faq.answer}</p>
+                            </div>
+                        </div>
+                    ))
+                ) : (
+                    <div className="text-center py-8 bg-gray-800 rounded-lg">
+                        <p className="text-gray-400">Tidak ditemukan hasil untuk pencarian Anda</p>
+                    </div>
+                )}
+            </div>
+
+            {/* Contact Support */}
+            <div className="bg-gray-800 rounded-lg p-8 text-center">
                 <h2 className="text-2xl font-bold mb-4">Masih ada pertanyaan?</h2>
                 <p className="text-gray-400 mb-6">
                     Jika Anda tidak menemukan jawaban yang Anda cari, jangan ragu untuk menghubungi tim dukungan kami.
                 </p>
-                <button className="bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-lg font-medium transition">
+                <button
+                    className="bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-lg font-medium transition"
+                    onClick={() => {
+                        // Add your contact support logic here
+                    }}
+                >
                     Hubungi Support
                 </button>
             </div>
