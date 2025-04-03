@@ -13,6 +13,14 @@ export default function AdminUsers() {
       status: 'Active',
       joined: '2023-01-15'
     },
+    {
+      id: 2,
+      name: 'Bagong',
+      email: 'bagong@example.com',
+      role: 'Admin',
+      status: 'Active',
+      joined: '2023-01-15'
+    },
     // More users...
   ]
 
