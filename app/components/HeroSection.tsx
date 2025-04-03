@@ -27,7 +27,11 @@ export default function HeroSection() {
       <div className="relative z-10 py-32 px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+<<<<<<< HEAD
             Join Team Esport Kamiiisss <span className="text-purple-400">Esports</span> Community
+=======
+            Join Team Esport <span className="text-purple-400">Esports</span> Community
+>>>>>>> c564e3ccc15d4f2d763e379d005e8f6b0aa712de
           </h1>
           <p className="text-xl text-gray-300 mb-10">
             Compete in tournaments, connect with gamers, and stay updated with the latest in esports.
