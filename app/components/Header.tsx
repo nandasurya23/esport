@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import Image from 'next/image'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -19,7 +20,12 @@ export default function Header() {
           className="text-2xl font-bold text-purple-400 hover:text-purple-300 transition"
           onClick={() => setIsOpen(false)}
         >
-          EsportsHub
+          <Image
+            src="/logo1.png"
+            alt="Logo"
+            width={40}
+            height={40}
+          />
         </Link>
         
         {/* Desktop Navigation */}
