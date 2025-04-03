@@ -13,7 +13,7 @@ export default function TeamCard({ team }: TeamCardProps) {
       href={`/teams/${team.id}`}
       className="group bg-gray-800 rounded-lg p-4 flex flex-col items-center text-center hover:bg-gray-700 transition duration-300"
     >
-      <div className="w-24 h-24 md:w-32 md:h-32 mb-4 rounded-full bg-gray-700 flex items-center justify-center overflow-hidden border-2 border-purple-500 group-hover:border-purple-400 transition">
+      <div className="w-24 h-24 md:w-32 md:h-32 mb-4 rounded-full bg-gray-700 flex items-center justify-center overflow-hidden border-2 border-red-500 group-hover:border-red-400 transition">
         {team.logo ? (
           <img 
             src={team.logo} 
@@ -21,10 +21,10 @@ export default function TeamCard({ team }: TeamCardProps) {
             className="w-full h-full object-cover"
           />
         ) : (
-          <span className="text-2xl font-bold text-purple-400">{team.name.charAt(0)}</span>
+          <span className="text-2xl font-bold text-red-400">{team.name.charAt(0)}</span>
         )}
       </div>
-      <h3 className="text-lg font-bold mb-1 group-hover:text-purple-400 transition">{team.name}</h3>
+      <h3 className="text-lg font-bold mb-1 group-hover:text-red-400 transition">{team.name}</h3>
       <p className="text-sm text-gray-400 mb-2">{team.game}</p>
       <div className="flex items-center text-xs text-gray-500">
         <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

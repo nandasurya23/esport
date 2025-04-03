@@ -24,19 +24,19 @@ export default function EventCard({ event }: EventCardProps) {
       <div className="p-4">
         <div className="flex justify-between items-start mb-2">
           <h3 className="text-xl font-bold">{event.title}</h3>
-          <span className="bg-purple-600 text-white text-xs px-2 py-1 rounded">
+          <span className="bg-red-600 text-white text-xs px-2 py-1 rounded">
             {event.game}
           </span>
         </div>
         <p className="text-gray-400 mb-2">
-          <span className="text-purple-400">Date:</span> {new Date(event.date).toLocaleDateString()}
+          <span className="text-red-400">Date:</span> {new Date(event.date).toLocaleDateString()}
         </p>
         <p className="text-gray-400 mb-4">
-          <span className="text-purple-400">Location:</span> {event.location}
+          <span className="text-red-400">Location:</span> {event.location}
         </p>
         <Link 
           href={`/events/${event.id}`}
-          className="block w-full bg-purple-600 hover:bg-purple-500 text-white text-center py-2 rounded transition"
+          className="block w-full bg-red-600 hover:bg-red-500 text-white text-center py-2 rounded transition"
         >
           View Details
         </Link>

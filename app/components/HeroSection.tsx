@@ -35,7 +35,7 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               href="/tournaments"
-              className="px-8 py-3 bg-purple-600 hover:bg-purple-500 text-white font-medium rounded-lg transition duration-300"
+              className="px-8 py-3 bg-red-600 hover:bg-red-500 text-white font-medium rounded-lg transition duration-300"
             >
               Browse Tournaments
             </Link>
@@ -54,19 +54,19 @@ export default function HeroSection() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             <div className="p-2">
-              <p className="text-3xl font-bold text-purple-400">250+</p>
+              <p className="text-3xl font-bold text-red-400">250+</p>
               <p className="text-gray-300">Active Tournaments</p>
             </div>
             <div className="p-2">
-              <p className="text-3xl font-bold text-purple-400">10K+</p>
+              <p className="text-3xl font-bold text-red-400">10K+</p>
               <p className="text-gray-300">Registered Players</p>
             </div>
             <div className="p-2">
-              <p className="text-3xl font-bold text-purple-400">500+</p>
+              <p className="text-3xl font-bold text-red-400">500+</p>
               <p className="text-gray-300">Teams Competing</p>
             </div>
             <div className="p-2">
-              <p className="text-3xl font-bold text-purple-400">50+</p>
+              <p className="text-3xl font-bold text-red-400">50+</p>
               <p className="text-gray-300">Supported Games</p>
             </div>
           </div>
