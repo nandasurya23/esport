@@ -16,7 +16,7 @@ export default function Header() {
       <div className="container mx-auto flex justify-between items-center">
         <Link 
           href="/" 
-          className="text-2xl font-bold text-red-400 hover:text-red-300 transition"
+          className="text-2xl font-bold text-purple-400 hover:text-purple-300 transition"
           onClick={() => setIsOpen(false)}
         >
           EsportsHub
@@ -24,17 +24,17 @@ export default function Header() {
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6">
-          <Link href="/events" className="hover:text-red-400 transition">Events</Link>
-          <Link href="/community" className="hover:text-red-400 transition">Community</Link>
-          <Link href="/tournaments" className="hover:text-red-400 transition">Tournaments</Link>
-          <Link href="/teams" className="hover:text-red-400 transition">Teams</Link>
-          <Link href="/blog" className="hover:text-red-400 transition">Blog</Link>
+          <Link href="/events" className="hover:text-purple-400 transition">Events</Link>
+          <Link href="/community" className="hover:text-purple-400 transition">Community</Link>
+          <Link href="/tournaments" className="hover:text-purple-400 transition">Tournaments</Link>
+          <Link href="/teams" className="hover:text-purple-400 transition">Teams</Link>
+          <Link href="/blog" className="hover:text-purple-400 transition">Blog</Link>
         </nav>
         
         {/* Desktop Auth Buttons */}
         <div className="hidden md:flex space-x-4">
           <Link href="/login" className="px-4 py-2 rounded hover:bg-gray-700 transition">Login</Link>
-          <Link href="/register" className="px-4 py-2 bg-red-600 rounded hover:bg-red-500 transition">Register</Link>
+          <Link href="/register" className="px-4 py-2 bg-purple-600 rounded hover:bg-purple-500 transition">Register</Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -53,35 +53,35 @@ export default function Header() {
           <nav className="flex flex-col space-y-4">
             <Link 
               href="/events" 
-              className="hover:text-red-400 transition py-2 border-b border-gray-700"
+              className="hover:text-purple-400 transition py-2 border-b border-gray-700"
               onClick={toggleMenu}
             >
               Eventsssds
             </Link>
             <Link 
               href="/community" 
-              className="hover:text-red-400 transition py-2 border-b border-gray-700"
+              className="hover:text-purple-400 transition py-2 border-b border-gray-700"
               onClick={toggleMenu}
             >
               Community
             </Link>
             <Link 
               href="/tournaments" 
-              className="hover:text-red-400 transition py-2 border-b border-gray-700"
+              className="hover:text-purple-400 transition py-2 border-b border-gray-700"
               onClick={toggleMenu}
             >
               Tournaments
             </Link>
             <Link 
               href="/teams" 
-              className="hover:text-red-400 transition py-2 border-b border-gray-700"
+              className="hover:text-purple-400 transition py-2 border-b border-gray-700"
               onClick={toggleMenu}
             >
               Teams
             </Link>
             <Link 
               href="/blog" 
-              className="hover:text-red-400 transition py-2 border-b border-gray-700"
+              className="hover:text-purple-400 transition py-2 border-b border-gray-700"
               onClick={toggleMenu}
             >
               Blog
@@ -98,7 +98,7 @@ export default function Header() {
             </Link>
             <Link 
               href="/register" 
-              className="w-full text-center px-4 py-2 bg-red-600 rounded hover:bg-red-500 transition"
+              className="w-full text-center px-4 py-2 bg-purple-600 rounded hover:bg-purple-500 transition"
               onClick={toggleMenu}
             >
               Register
