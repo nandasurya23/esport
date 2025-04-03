@@ -2,6 +2,7 @@ import HeroSection from '@/app/components/HeroSection'
 import EventCard from '@/app/components/EventCard'
 import TeamCard from '@/app/components/TeamCard'
 import BlogCard from '@/app/components/BlogCard'
+import Testimonial from '@/app/components/Testimonial'
 
 export default function Home() {
   // Sample data - in a real app, this would come from an API
@@ -74,10 +75,10 @@ export default function Home() {
       </section>
       
       {/* Testimonials */}
-      <section className="bg-gray-800 py-16">
+      <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">What Our Community Says</h2>
           {/* Testimonial cards would go here */}
+          <Testimonial/>
         </div>
       </section>
     </div>

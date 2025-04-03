@@ -5,11 +5,11 @@ export default function EventsPage() {
   const upcomingEvents = [
     {
       id: 1,
-      title: 'Valorant Championship',
+      title: 'PUBG Championship',
       date: '2023-12-15',
-      game: 'Valorant',
-      location: 'Online',
-      image: '/valorant-event.jpg'
+      game: 'PUBG',
+      location: 'Offline - Primakara',
+      image: 'event/PUBG1.jpg'
     },
     {
         id: 2,

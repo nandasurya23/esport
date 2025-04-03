@@ -56,7 +56,7 @@ export default function Header() {
               className="hover:text-purple-400 transition py-2 border-b border-gray-700"
               onClick={toggleMenu}
             >
-              Events
+              Eventsssds
             </Link>
             <Link 
               href="/community" 
