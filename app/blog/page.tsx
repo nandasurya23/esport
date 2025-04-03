@@ -5,7 +5,7 @@ export default function BlogPage() {
   const blogPosts = [
     {
       id: 1,
-      title: 'Top 5 Strategies for Competitive Play in Valorant',
+      title: 'Free Fire Tournament Denpasar',
       excerpt: 'Learn the best strategies to dominate your opponents in Valorant ranked matches...',
       date: '2023-11-15',
       category: 'Tips & Tricks',

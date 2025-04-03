@@ -27,14 +27,6 @@ const Testimonials = () => {
       content: "As a coach, I've found so many talented players through this community. The competitive scene is thriving!",
       rating: 5,
       avatar: "teams/phoenix.png"
-    },
-    {
-      id: 4,
-      name: "ShadowAssassin",
-      role: "Dota 2 Coach",
-      content: "As a coach, I've found so many talented players through this community. The competitive scene is thriving!",
-      rating: 5,
-      avatar: "teams/phoenix.png"
     }
   ];
 

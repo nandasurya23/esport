@@ -37,6 +37,13 @@ export default function Home() {
       date: '2023-11-10',
       category: 'Tips & Tricks'
     },
+    {
+      id: 2,
+      title: 'The Evolution of Esports: From Niche to Mainstream',
+      excerpt: 'How competitive gaming transformed into a billion-dollar industry...',
+      date: '2023-11-10',
+      category: 'Analysis',
+    }
     // More blogs...
   ]
 
